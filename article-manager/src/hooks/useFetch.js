@@ -6,7 +6,7 @@ export const useFetch = (url, _options) => {
   const [error, setError] = useState(null);
   const options = useRef(_options);
   useEffect(() => {
-    console.log(options);
+    console.log("OPTIONEN", options);
     const controller = new AbortController();
     const fetchData = async () => {
       setIsPending(true);

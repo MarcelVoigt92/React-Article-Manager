@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav>
       <Link to="/">
-        <h1>My Articles</h1>
+        <h1>BloggSpot 1.0</h1>
       </Link>
       <NavLink exact to="/">
         Home
