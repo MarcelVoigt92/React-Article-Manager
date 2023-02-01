@@ -32,7 +32,24 @@ To run the project on your local machine, follow these steps:
 
 5.  The application should now be running on `http://localhost:3000` in your browser.
 
-6.  Start the Server with the following command :
+6.  Now you need a new folder that will be called Data in the root of the Project
+
+7.  In data we are going to make a new file called db.json `our data bank`
+
+8.  ### the Data in db.json is going to have this syntaxs:
+
+```js
+{
+  "articles": [
+
+  ],
+  "contact": [
+
+  ]
+}
+```
+
+9.  Start the Server with the following command :
 
 `json-server --watch ./data/db.json --port 4000`
 
