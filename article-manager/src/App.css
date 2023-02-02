@@ -31,3 +31,17 @@ nav a {
 nav a.active {
   background-color: #4c4e6d;
 }
+
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-color: #333;
+  width: auto;
+  height: auto;
+  padding: 20px;
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 10px;
+}
