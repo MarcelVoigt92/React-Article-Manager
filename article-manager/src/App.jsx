@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import {
   About,
   Contact,
@@ -16,29 +16,21 @@ function App() {
       <BrowserRouter>
         <NavBar />
 
-        <Switch>
-          <Route exact path="/" component={Home} />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
 
-          <Route path="/about">
-            <About />
-          </Route>
+          <Route path="/about" element={<About />} />
 
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/articles/:id">
-            <Article />
-          </Route>
-          <Route path="/post">
-            <PostArticle />
-          </Route>
-          <Route path="/success">
-            <Success />
-          </Route>
-          <Route path="*">
-            <Redirect to="/" />
-          </Route>
-        </Switch>
+          <Route path="/contact" element={<Contact />} />
+
+          <Route path="/articles/:id" element={<Article />} />
+
+          <Route path="/post" element={<PostArticle />} />
+
+          <Route path="/success" element={<Success />} />
+
+          <Route path="/*" element={<Navigate to="/" />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );

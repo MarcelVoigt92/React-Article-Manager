@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import "./styles/Article.css";
 
@@ -20,7 +20,7 @@ export const ArticlePage = () => {
     imageUrl: "",
   });
 
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleDelete = (id) => {
     fetch(`http://localhost:4000/articles/${id}`, {
@@ -76,13 +76,13 @@ export const ArticlePage = () => {
   console.log(formData);
   const closeModal = () => {
     setShowModal(false);
-    history.push("/");
+    history("/");
   };
 
   useEffect(() => {
     if (error) {
       setTimeout(() => {
-        history.push("/");
+        history("/");
       }, 2000);
     }
   }, [error, history]);

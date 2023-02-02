@@ -8,7 +8,7 @@ export const HomePage = () => {
 
   return (
     <div className="home">
-      <h1>HomePage</h1>
+      <h1>Articles</h1>
       {loading && <h3>Loading...</h3>}
       {error && <h3>{error}</h3>}
       {articles?.map((article) => (

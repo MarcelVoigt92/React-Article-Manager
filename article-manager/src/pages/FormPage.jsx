@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./styles/Form.css";
 
 function FormPage() {
@@ -9,7 +9,7 @@ function FormPage() {
     message: "",
   });
 
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleChange = (event) => {
     setFormData({
@@ -38,7 +38,7 @@ function FormPage() {
       .catch((error) => {
         console.error("Error:", error);
       })
-      .finally(history.push(`/success?name=${formData.name}`));
+      .finally(history(`/success?name=${formData.name}`));
   };
 
   return (

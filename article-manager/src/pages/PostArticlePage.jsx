@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const PostArticle = () => {
   const [title, setTitle] = useState("");
@@ -7,7 +7,7 @@ const PostArticle = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [author, setAuthor] = useState("");
 
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,7 +30,7 @@ const PostArticle = () => {
       .catch((error) => {
         console.error("Error:", error);
       })
-      .finally(history.push(`/success?name=${author}`));
+      .finally(history(`/success?name=${author}`));
   };
 
   return (
